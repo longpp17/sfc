@@ -6,9 +6,9 @@ import os
 
 
 serverpass = argv[1]
-host = '45.76.124.45'
-port = 22
-
+host = argv[2]
+port = 5005
+serverpass = bytes(serverpass, 'utf-8')
 '''
 serverpass  = b"password"
 host        = "127.0.0.1"
