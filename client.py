@@ -7,7 +7,7 @@ import os
 
 file = argv[1]
 key = argv[2]
-host = '45.76.124.45'
+host = argv[3]
 port = 22
 address = (host, port)
 
@@ -63,6 +63,7 @@ def send_file(skt: object) -> object:
     with open(file, 'rb') as f:
         for data in f:
             skt.send(data)
+            print(len(data))
         f.close()
     return bool(recv(skt))
 
