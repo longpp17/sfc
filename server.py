@@ -5,7 +5,7 @@ from struct import *
 import os
 
 
-serverpass = sys.argv[1]
+serverpass = argv[1]
 host = '45.76.124.45'
 port = 22
 
