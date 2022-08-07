@@ -8,7 +8,7 @@ import os
 file = argv[1]
 key = argv[2]
 host = argv[3]
-port = 22
+port = 5050
 address = (host, port)
 
 
@@ -48,6 +48,7 @@ def recv(con):
 
 
 def send_description(skt, description):
+    print("begin send des")
     description = bytes(description, 'utf-8')
     skt.send(description)
     return bool(recv(skt))
@@ -72,6 +73,7 @@ def send_file(skt: object) -> object:
 
 
 def send(skt:object) -> object:
+    print("begin send")
     desciption = describe(key, filename, size)
     if send_description(skt, desciption) and send_info(skt, desciption):
         if send_file(skt):
